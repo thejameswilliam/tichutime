@@ -1,0 +1,94 @@
+<head>
+  <title>Tichu Awesome</title>
+</head>
+
+<body>
+  <div class="col-md-8 col-md-offset-2 text-center">
+    <button class="btn btn-success newGame">New Game</button>
+  </div>
+    {{> tichuScore}}
+
+</body>
+
+<template name="tichuScore">
+  <div class="score-table col-md-8 col-md-offset-2">
+    <h1>Score Table</h1>
+
+      {{#each tichuRound}}
+        {{>pastRound}}
+      {{/each}}
+
+      {{>currentRound}}
+
+  </div>
+</template>
+
+
+<template name="currentRound">
+  {{#each tichuGame}}
+  <form>
+  <div class="col-md-6">
+    <h2>{{teamOne.score}}</h2>
+    <div class="col-md-12" id="player-{{teamOne.personOne.name}}">
+      <h4>{{teamOne.personOne.name}}</h4>
+      {{>callButtons}}
+    </div>
+    <div class="col-md-12" id="player-{{teamOne.personTwo.name}}">
+      <h4>{{teamOne.personTwo.name}}</h4>
+      {{>callButtons}}
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <input type="number" step="5" class="form-control form-control-lg" id="tichuScoreTeamOne" />
+    </div>
+
+  </div>
+  <div class="col-md-6">
+      <h2>{{teamTwo.score}}</h2>
+    <div class="col-md-12" id="player-{{teamTwo.personOne.name}}">
+      <h4>{{teamTwo.personOne.name}}</h4>
+      {{>callButtons}}
+    </div>
+    <div class="col-md-12" id="player-{{teamTwo.personTwo.name}}">
+      <h4>{{teamTwo.personTwo.name}}</h4>
+      {{>callButtons}}
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <input type="number" step="5" class="form-control form-control-lg" id="tichuScoreTeamTwo" />
+    </div>
+
+  </div>
+  <div class="col-md-4 col-md-offset-4 submit">
+    <button type="submit" class="btn btn-success submitScore">Submit Score</button>
+  </div>
+  <div class="pull-right delete">
+    <button type="submit" class="btn btn-danger fa fa-times submitScore"></button>
+  </div>
+  </form>
+{{/each}}
+</template>
+
+<template name="callButtons">
+  <div class="btn-group" id="tichuCalls" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="radio" id="tichu" value="T" autocomplete="off">T
+    </label>
+    <label class="btn btn-primary active">
+      <input type="radio" id="noCall" value="N" autocomplete="off">N
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" id="grandTichu" value="G" autocomplete="off">G
+    </label>
+  </div>
+</template>
+
+<template name="pastRound">
+  <div class="row">
+    <div class="col-md-11">
+      <div class="col-md-6">{{teamOneScore}}</div>
+      <div class="col-md-6">{{teamTwoScore}}</div>
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-danger remove fa fa-times"></button>
+    </div>
+  </div>
+</template>
