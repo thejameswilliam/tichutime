@@ -59,7 +59,28 @@ if (Meteor.isClient) {
           var teamTwoScore = Number(event.target.form.tichuScoreTeamTwo.value);
           var totalScore = teamOneScore+teamTwoScore;
 
-          console.log(event.target.form.callType.value);
+
+          var called_ele = document.getElementsByClassName('active');
+
+
+          if(called_ele.length > 0) {
+
+
+            peopleWhoCalled = document.getElementById('peopleWhoCalled').innerHTML;
+
+            for (var i = 0; i < called_ele.length; ++i) {
+                var item = called_ele[i];
+                var personWhoCalled = $('.active:eq('+i+')').parent().attr('id');
+                var theCall = item.innerHTML;
+                //console.log(personWhoCalled,'called',theCall);
+                $("#peopleWhoCalled").append( personWhoCalled );
+                
+            }
+
+            //$("#peopleWhoCalled").html(personWhoCalled);
+            $('#whoCalled').modal('show');
+          }
+
           if(totalScore == 100) {
             TichuGame.update( this._id, {
               $inc: {'teamOne.score': teamOneScore},
@@ -77,8 +98,6 @@ if (Meteor.isClient) {
           } else {
 
           }
-
-
           event.target.form.tichuScoreTeamTwo.value = '';
           event.target.form.tichuScoreTeamOne.value = '';
 
@@ -92,7 +111,6 @@ if (Meteor.isClient) {
         var gameId = this.tichuGame;
         var currentTeamOneScore = TichuGame.find({_id:gameId}).teamOne;
         var currentTeamTwoScore = TichuGame.find({_id:gameId}).teamOne;
-        console.log(-this.teamOneScore);
         //console.log(this);
 
         TichuGame.update( gameId, {

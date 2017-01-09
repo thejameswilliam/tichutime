@@ -26,16 +26,22 @@
 
 <template name="currentRound">
   {{#each tichuGame}}
-  <form>
+  <form name="tichuGame">
   <div class="col-md-6">
     <h2>{{teamOne.score}}</h2>
     <div class="col-md-12" id="player-{{teamOne.personOne.name}}">
       <h4>{{teamOne.personOne.name}}</h4>
-      {{>callButtons}}
+      <div class="btn-group" id="teamOnePersonOne" data-toggle="buttons">
+        <button class="btn btn-primary">T</button>
+        <button class="btn btn-primary">G</button>
+      </div>
     </div>
     <div class="col-md-12" id="player-{{teamOne.personTwo.name}}">
       <h4>{{teamOne.personTwo.name}}</h4>
-      {{>callButtons}}
+      <div class="btn-group" id="teamOnePersonTwo" data-toggle="buttons">
+        <label class="btn btn-primary">T</label>
+        <label class="btn btn-primary">G</label>
+      </div>
     </div>
     <div class="col-md-8 col-md-offset-2">
         <input type="number" step="5" class="form-control form-control-lg" id="tichuScoreTeamOne" />
@@ -46,40 +52,64 @@
       <h2>{{teamTwo.score}}</h2>
     <div class="col-md-12" id="player-{{teamTwo.personOne.name}}">
       <h4>{{teamTwo.personOne.name}}</h4>
-      {{>callButtons}}
+      <div class="btn-group" id="teamTwoPersonOne" data-toggle="buttons">
+        <label class="btn btn-primary">T</label>
+        <label class="btn btn-primary">G</label>
+      </div>
     </div>
     <div class="col-md-12" id="player-{{teamTwo.personTwo.name}}">
       <h4>{{teamTwo.personTwo.name}}</h4>
-      {{>callButtons}}
+      <div class="btn-group" id="teamTwoPersonTwo" data-toggle="buttons">
+        <label class="btn btn-primary">T</label>
+        <label class="btn btn-primary">G</label>
+      </div>
     </div>
     <div class="col-md-8 col-md-offset-2">
         <input type="number" step="5" class="form-control form-control-lg" id="tichuScoreTeamTwo" />
     </div>
 
   </div>
-  <div class="col-md-4 col-md-offset-4 submit">
-    <button type="submit" class="btn btn-success submitScore">Submit Score</button>
-  </div>
   <div class="pull-right delete">
     <button type="submit" class="btn btn-danger fa fa-times submitScore"></button>
   </div>
+
+  <div class="tichuMade">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success submitScore">
+      Submit Score
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="whoCalled" tabindex="-1" role="dialog" ria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="peopleWhoCalled">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary submitFinalScore">Submit Score</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
   </form>
 {{/each}}
 </template>
 
-<template name="callButtons">
-  <div class="btn-group" id="tichuCalls" data-toggle="buttons">
-    <label class="btn btn-primary">
-      <input type="radio" id="tichu" value="T" autocomplete="off">T
-    </label>
-    <label class="btn btn-primary active">
-      <input type="radio" id="noCall" value="N" autocomplete="off">N
-    </label>
-    <label class="btn btn-primary">
-      <input type="radio" id="grandTichu" value="G" autocomplete="off">G
-    </label>
-  </div>
-</template>
+
 
 <template name="pastRound">
   <div class="row">
