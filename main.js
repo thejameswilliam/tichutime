@@ -64,19 +64,21 @@ if (Meteor.isClient) {
 
 
           if(called_ele.length > 0) {
-
-
             peopleWhoCalled = document.getElementById('peopleWhoCalled').innerHTML;
 
             for (var i = 0; i < called_ele.length; ++i) {
                 var item = called_ele[i];
                 var personWhoCalled = $('.active:eq('+i+')').parent().attr('id');
                 var theCall = item.innerHTML;
-                //console.log(personWhoCalled,'called',theCall);
-                $("#peopleWhoCalled").append( personWhoCalled );
-                
-            }
+                var htmlString = "<label class='btn btn-primary'><input type='radio'>"+personWhoCalled+"</label>"
+                console.log(htmlString);
+                $("#peopleWhoCalled").append( htmlString );
+                //$("#peopleWhoCalled").append( htmlString );
 
+            }
+            $('#whoCalled').on("hidden.bs.modal", function () {
+                $("#peopleWhoCalled").html( '' );
+            });
             //$("#peopleWhoCalled").html(personWhoCalled);
             $('#whoCalled').modal('show');
           }
@@ -95,8 +97,18 @@ if (Meteor.isClient) {
             })
             event.target.form.tichuScoreTeamTwo.value = '';
             event.target.form.tichuScoreTeamOne.value = '';
-          } else {
-
+          } else if (teamOneScore == 200 || teamTwoScore == 200) {
+            TichuGame.update( this._id, {
+              $inc: {'teamOne.score': teamOneScore},
+            });
+            TichuGame.update( this._id, {
+              $inc: {'teamTwo.score': teamTwoScore},
+            });
+            TichuRound.insert({
+              teamOneScore:teamOneScore,
+              teamTwoScore:teamTwoScore,
+              tichuGame:this._id
+            })
           }
           event.target.form.tichuScoreTeamTwo.value = '';
           event.target.form.tichuScoreTeamOne.value = '';

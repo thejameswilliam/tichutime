@@ -1,7 +1,3 @@
-tichuRound	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Template.tichuScore.tichuRound = function() {$/;"	function	line:8
-Template.tichuScore.tichuRound	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Meteor.subscribe("games");$/;"	function	line:6
-tichuGame	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Template.currentRound.tichuGame = function() {$/;"	function	line:12
-Template.currentRound.tichuGame	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    }$/;"	function	line:10
 head	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^<head>$/;"	function	line:1
 title	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^  <title>Tichu Awesome<\/title>$/;"	function	line:2
 body	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^<body>$/;"	function	line:5
@@ -48,16 +44,19 @@ div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^    <div cl
 div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <div class="modal-dialog" role="document">$/;"	function	line:84
 div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^        <div class="modal-content">$/;"	function	line:85
 div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^          <div class="modal-header">$/;"	function	line:86
-h	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <h5 class="modal-title" id="exampleModalLongTitle">Modal title<\/h5>$/;"	function	line:87
-button	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <button type="button" class="close" data-dismiss="modal" aria-label="Close">$/;"	function	line:88
-span	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^              <span aria-hidden="true">&times;<\/span>$/;"	function	line:89
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^          <div class="modal-body" id="peopleWhoCalled">$/;"	function	line:92
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^          <div class="modal-footer">$/;"	function	line:95
-button	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <button type="button" class="btn btn-primary submitFinalScore">Submit Score<\/button>$/;"	function	line:96
-template	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^<template name="pastRound">$/;"	function	line:114
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^  <div class="row">$/;"	function	line:115
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^    <div class="col-md-11">$/;"	function	line:116
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <div class="col-md-6">{{teamOneScore}}<\/div>$/;"	function	line:117
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <div class="col-md-6">{{teamTwoScore}}<\/div>$/;"	function	line:118
-div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^    <div class="col-md-1">$/;"	function	line:120
-button	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <button class="btn btn-danger remove fa fa-times"><\/button>$/;"	function	line:121
+h	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <h5 class="modal-title" id="exampleModalLongTitle">Who went out first?<\/h5>$/;"	function	line:87
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^          <div class="modal-body">$/;"	function	line:89
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <div class="btn-group"  id="peopleWhoCalled" data-toggle="buttons">$/;"	function	line:90
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^          <div class="modal-footer">$/;"	function	line:94
+button	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^            <button type="button" class="btn btn-primary submitFinalScore">Submit Score<\/button>$/;"	function	line:95
+template	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^<template name="pastRound">$/;"	function	line:113
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^  <div class="row">$/;"	function	line:114
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^    <div class="col-md-11">$/;"	function	line:115
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <div class="col-md-6">{{teamOneScore}}<\/div>$/;"	function	line:116
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <div class="col-md-6">{{teamTwoScore}}<\/div>$/;"	function	line:117
+div	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^    <div class="col-md-1">$/;"	function	line:119
+button	/Users/James/Documents/Sites/meteortuts/tichu/client/main.html	/^      <button class="btn btn-danger remove fa fa-times"><\/button>$/;"	function	line:120
+tichuRound	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Template.tichuScore.tichuRound = function() {$/;"	function	line:8
+Template.tichuScore.tichuRound	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Meteor.subscribe("games");$/;"	function	line:6
+tichuGame	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    Template.currentRound.tichuGame = function() {$/;"	function	line:12
+Template.currentRound.tichuGame	/Users/James/Documents/Sites/meteortuts/tichu/main.js	/^    }$/;"	function	line:10

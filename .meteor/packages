@@ -26,3 +26,4 @@ less
 fortawesome:fontawesome
 coursierprive:tether
 twbs:bootstrap@=4.0.0-alpha2
+kadira:flow-router
